@@ -1,0 +1,31 @@
+development:
+  clients:
+    default:
+      database: cmp_db_dev
+      hosts:
+        - localhost:27018
+  options:
+      raise_not_found_error: false
+test:
+  clients:
+    default:
+      database: cmp_db_test
+      hosts:
+        - localhost:27018
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 5
+
+
+production:
+  clients:
+    default:
+      database: cmp_db_prod
+      hosts:
+        - localhost:27018
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 20
+        raise_not_found_error: false

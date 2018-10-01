@@ -1,0 +1,603 @@
+class Analytics::ReportService < ApplicationService
+
+	#zero data creations
+	def get_zero_data(currency,zero_report_data)
+
+		zero_report_data[IMPRESSIONS]=Number.new(0)
+		zero_report_data[DUPLICATE_IMPRESSIONS]=Number.new(0)
+		zero_report_data[UNIQUE_IMPRESSIONS]=Number.new(0)
+		zero_report_data[INVALID_IMPRESSIONS]=Number.new(0)
+		zero_report_data[VALID_IMPRESSIONS]=Number.new(0)
+
+		zero_report_data[BANNER_CLICKS]=Number.new(0)
+		zero_report_data[DUPLICATE_BANNER_CLICKS]=Number.new(0)
+		zero_report_data[UNIQUE_BANNER_CLICKS]=Number.new(0)
+		zero_report_data[INVALID_BANNER_CLICKS]=Number.new(0)
+		zero_report_data[VALID_BANNER_CLICKS]=Number.new(0)
+
+		zero_report_data[LANDING_PAGE_VIEWS]=Number.new(0)
+		zero_report_data[DUPLICATE_LANDING_PAGE_VIEWS]=Number.new(0)
+		zero_report_data[UNIQUE_LANDING_PAGE_VIEWS]=Number.new(0)
+		zero_report_data[INVALID_LANDING_PAGE_VIEWS]=Number.new(0)
+		zero_report_data[VALID_LANDING_PAGE_VIEWS]=Number.new(0)
+
+		zero_report_data[ENGAGMENTS]=Number.new(0)
+		zero_report_data[DUPLICATE_ENGAGMENTS]=Number.new(0)
+		zero_report_data[UNIQUE_ENGAGMENTS]=Number.new(0)
+		zero_report_data[INVALID_ENGAGMENTS]=Number.new(0)
+		zero_report_data[VALID_ENGAGMENTS]=Number.new(0)
+
+		zero_report_data[CONTENT_VIEWS]=Number.new(0)
+		zero_report_data[MEDIA_POSTBACKS]=Number.new(0)
+		zero_report_data[SUBSCRIPTION_POSTBACKS]=Number.new(0)
+
+		zero_report_data[SUBSCRIPTIONS]=Number.new(0)
+		zero_report_data[UN_SUBSCRIPTIONS]=Number.new(0)
+		zero_report_data[INVALID_SUBSCRIPTIONS]=Number.new(0)
+		zero_report_data[VALID_SUBSCRIPTIONS]=Number.new(0)
+
+		zero_report_data[SUBSCRIBERS]=Number.new(0)
+		zero_report_data[ACTIVE_SUBSCRIBERS]=Number.new(0)
+
+		zero_report_data[MT_SENT]=Number.new(0)
+		zero_report_data[MT_SENT_BY_OPERATOR]=Number.new(0)
+		zero_report_data[MT_SUCCESS]=Number.new(0)
+		zero_report_data[MT_FAIL]=Number.new(0)
+		zero_report_data[MT_RETRY]=Number.new(0)
+		zero_report_data[MT_UNKNOWN]=Number.new(0)
+		zero_report_data[MT_DELIVERED]=Number.new(0)
+		zero_report_data[UN_SUBSCRIPTIONS]=Number.new(0)
+		zero_report_data[UN_SUBSCRIPTIONS_DAY_0]=Number.new(0)
+		zero_report_data[UN_SUBSCRIPTIONS_DAY_1]=Number.new(0)
+		zero_report_data[UN_SUBSCRIPTIONS_DAY_3]=Number.new(0)
+		zero_report_data[UN_SUBSCRIPTIONS_DAY_7]=Number.new(0)
+		zero_report_data[UN_SUBSCRIPTIONS_DAY_15]=Number.new(0)
+		zero_report_data[SUBSCRIPTIONS_DAY_0]=Number.new(0)
+		zero_report_data[SUBSCRIPTIONS_DAY_1]=Number.new(0)
+		zero_report_data[SUBSCRIPTIONS_DAY_3]=Number.new(0)
+		zero_report_data[SUBSCRIPTIONS_DAY_7]=Number.new(0)
+		zero_report_data[SUBSCRIPTIONS_DAY_15]=Number.new(0)
+
+		zero_report_data[NET_REVENUE_DOLLAR]=Dollar.new(0.00)
+		zero_report_data[REVENUE_DOLLAR]=Dollar.new(0.00)
+		zero_report_data[MEDIA_COST_DOLLAR]=Dollar.new(0.00)
+
+    zero_report_data[COST_PER_ACTIVE_SUBSCRIBER_DOLLAR]=Dollar.new(0.00)
+		zero_report_data[AVERAGE_REVENUE_PER_SUBSCRIBER_DOLLAR]=Dollar.new(0.00)
+
+		zero_report_data[PAUSE_ROI_DOLLAR]=Dollar.new(0.00)
+		zero_report_data[DAILY_ROI_DOLLAR]=Dollar.new(0.00)
+
+		zero_report_data[NET_REVENUE_LOCAL]=Amount.new(currency,0.00)
+		zero_report_data[REVENUE_LOCAL]=Amount.new(currency,0.00)
+		zero_report_data[MEDIA_COST_LOCAL]=Amount.new(currency,0.00)
+
+		zero_report_data[COST_PER_ACTIVE_SUBSCRIBER_LOCAL]=Amount.new(currency,0.00)
+		zero_report_data[AVERAGE_REVENUE_PER_SUBSCRIBER_LOCAL]=Amount.new(currency,0.00)
+
+		zero_report_data[PAUSE_ROI_LOCAL]=Amount.new(currency,0.00)
+		zero_report_data[DAILY_ROI_LOCAL]=Amount.new(currency,0.00)
+
+		zero_report_data[NEW_SUB_UNSUB_PERCENT]=Percentage.new(0.00)
+		zero_report_data[UNSUB_PERCENT]=Percentage.new(0.00)
+		zero_report_data[VALID_SUB_PERCENT]=Percentage.new(0.00)
+		zero_report_data[VALID_ENGAGMENT_PERCENT]=Percentage.new(0.00)
+		zero_report_data[VALID_CLICK_PERCENT]=Percentage.new(0.00)
+		zero_report_data[SUB_RATE_PERCENT]=Percentage.new(0.00)
+		zero_report_data[MT_SUCCESS_PERCENT]=Percentage.new(0.00)
+		zero_report_data[MT_SENT_PERCENT]=Percentage.new(0.00)
+		zero_report_data[CONTENT_VIEW_PERCENT]=Percentage.new(0.00)
+		zero_report_data[LANDING_PAGE_VALID_PERCENT]=Percentage.new(0.00)
+
+	end
+
+	def get_zero_account_data(currency,zero_report_data)
+
+		zero_report_data[IMPRESSIONS]=Number.new(0)
+		zero_report_data[DUPLICATE_IMPRESSIONS]=Number.new(0)
+		zero_report_data[UNIQUE_IMPRESSIONS]=Number.new(0)
+		zero_report_data[INVALID_IMPRESSIONS]=Number.new(0)
+		zero_report_data[VALID_IMPRESSIONS]=Number.new(0)
+
+		zero_report_data[BANNER_CLICKS]=Number.new(0)
+		zero_report_data[DUPLICATE_BANNER_CLICKS]=Number.new(0)
+		zero_report_data[UNIQUE_BANNER_CLICKS]=Number.new(0)
+		zero_report_data[INVALID_BANNER_CLICKS]=Number.new(0)
+		zero_report_data[VALID_BANNER_CLICKS]=Number.new(0)
+
+		zero_report_data[LANDING_PAGE_VIEWS]=Number.new(0)
+		zero_report_data[DUPLICATE_LANDING_PAGE_VIEWS]=Number.new(0)
+		zero_report_data[UNIQUE_LANDING_PAGE_VIEWS]=Number.new(0)
+		zero_report_data[INVALID_LANDING_PAGE_VIEWS]=Number.new(0)
+		zero_report_data[VALID_LANDING_PAGE_VIEWS]=Number.new(0)
+
+		zero_report_data[ENGAGMENTS]=Number.new(0)
+		zero_report_data[DUPLICATE_ENGAGMENTS]=Number.new(0)
+		zero_report_data[UNIQUE_ENGAGMENTS]=Number.new(0)
+		zero_report_data[INVALID_ENGAGMENTS]=Number.new(0)
+		zero_report_data[VALID_ENGAGMENTS]=Number.new(0)
+
+		zero_report_data[CONTENT_VIEWS]=Number.new(0)
+		zero_report_data[MEDIA_POSTBACKS]=Number.new(0)
+		zero_report_data[SUBSCRIPTION_POSTBACKS]=Number.new(0)
+
+		zero_report_data[SUBSCRIPTIONS]=Number.new(0)
+		zero_report_data[UN_SUBSCRIPTIONS]=Number.new(0)
+		zero_report_data[INVALID_SUBSCRIPTIONS]=Number.new(0)
+		zero_report_data[VALID_SUBSCRIPTIONS]=Number.new(0)
+
+		zero_report_data[SUBSCRIBERS]=Number.new(0)
+		zero_report_data[ACTIVE_SUBSCRIBERS]=Number.new(0)
+
+		zero_report_data[MT_SENT]=Number.new(0)
+		zero_report_data[MT_SENT_BY_OPERATOR]=Number.new(0)
+		zero_report_data[MT_SUCCESS]=Number.new(0)
+		zero_report_data[MT_FAIL]=Number.new(0)
+		zero_report_data[MT_RETRY]=Number.new(0)
+		zero_report_data[MT_UNKNOWN]=Number.new(0)
+		zero_report_data[MT_DELIVERED]=Number.new(0)
+		zero_report_data[UN_SUBSCRIPTIONS]=Number.new(0)
+		zero_report_data[UN_SUBSCRIPTIONS_DAY_0]=Number.new(0)
+		zero_report_data[UN_SUBSCRIPTIONS_DAY_1]=Number.new(0)
+		zero_report_data[UN_SUBSCRIPTIONS_DAY_3]=Number.new(0)
+		zero_report_data[UN_SUBSCRIPTIONS_DAY_7]=Number.new(0)
+		zero_report_data[UN_SUBSCRIPTIONS_DAY_15]=Number.new(0)
+		zero_report_data[SUBSCRIPTIONS_DAY_0]=Number.new(0)
+		zero_report_data[SUBSCRIPTIONS_DAY_1]=Number.new(0)
+		zero_report_data[SUBSCRIPTIONS_DAY_3]=Number.new(0)
+		zero_report_data[SUBSCRIPTIONS_DAY_7]=Number.new(0)
+		zero_report_data[SUBSCRIPTIONS_DAY_15]=Number.new(0)
+
+		zero_report_data[NET_REVENUE_DOLLAR]=Dollar.new(0.00)
+		zero_report_data[REVENUE_DOLLAR]=Dollar.new(0.00)
+		zero_report_data[MEDIA_COST_DOLLAR]=Dollar.new(0.00)
+		zero_report_data[COST_PER_ACTIVE_SUBSCRIBER_DOLLAR]=Dollar.new(0.00)
+		zero_report_data[AVERAGE_REVENUE_PER_SUBSCRIBER_DOLLAR]=Dollar.new(0.00)
+
+		zero_report_data[PAUSE_ROI_DOLLAR]=Dollar.new(0.00)
+		zero_report_data[DAILY_ROI_DOLLAR]=Dollar.new(0.00)
+
+		zero_report_data[NET_REVENUE_LOCAL]=Amount.new(currency,0.00)
+		zero_report_data[REVENUE_LOCAL]=Amount.new(currency,0.00)
+		zero_report_data[MEDIA_COST_LOCAL]=Amount.new(currency,0.00)
+		zero_report_data[COST_PER_ACTIVE_SUBSCRIBER_LOCAL]=Amount.new(currency,0.00)
+		zero_report_data[AVERAGE_REVENUE_PER_SUBSCRIBER_LOCAL]=Amount.new(currency,0.00)
+
+		zero_report_data[PAUSE_ROI_LOCAL]=Amount.new(currency,0.00)
+		zero_report_data[DAILY_ROI_LOCAL]=Amount.new(currency,0.00)
+
+		zero_report_data[NEW_SUB_UNSUB_PERCENT]=Percentage.new(0.00)
+		zero_report_data[UNSUB_PERCENT]=Percentage.new(0.00)
+		zero_report_data[VALID_SUB_PERCENT]=Percentage.new(0.00)
+		zero_report_data[VALID_ENGAGMENT_PERCENT]=Percentage.new(0.00)
+		zero_report_data[VALID_CLICK_PERCENT]=Percentage.new(0.00)
+		zero_report_data[SUB_RATE_PERCENT]=Percentage.new(0.00)
+		zero_report_data[MT_SUCCESS_PERCENT]=Percentage.new(0.00)
+		zero_report_data[MT_SENT_PERCENT]=Percentage.new(0.00)
+		zero_report_data[CONTENT_VIEW_PERCENT]=Percentage.new(0.00)
+		zero_report_data[LANDING_PAGE_VALID_PERCENT]=Percentage.new(0.00)
+
+	end
+
+	def get_zero_operator_data(currency,zero_operator_report_data)
+
+		zero_operator_report_data[CONTENT_VIEWS]=Number.new(0)
+		zero_operator_report_data[MEDIA_POSTBACKS]=Number.new(0)
+		zero_operator_report_data[SUBSCRIPTION_POSTBACKS]=Number.new(0)
+
+		zero_operator_report_data[SUBSCRIPTIONS]=Number.new(0)
+		zero_operator_report_data[UN_SUBSCRIPTIONS]=Number.new(0)
+
+		zero_operator_report_data[SUBSCRIBERS]=Number.new(0)
+		zero_operator_report_data[ACTIVE_SUBSCRIBERS]=Number.new(0)
+
+		zero_operator_report_data[MT_SENT]=Number.new(0)
+		zero_operator_report_data[MT_SENT_BY_OPERATOR]=Number.new(0)
+		zero_operator_report_data[MT_SUCCESS]=Number.new(0)
+		zero_operator_report_data[MT_FAIL]=Number.new(0)
+		zero_operator_report_data[MT_RETRY]=Number.new(0)
+		zero_operator_report_data[MT_UNKNOWN]=Number.new(0)
+		zero_operator_report_data[MT_DELIVERED]=Number.new(0)
+		zero_operator_report_data[UN_SUBSCRIPTIONS]=Number.new(0)
+		zero_operator_report_data[UN_SUBSCRIPTIONS_DAY_0]=Number.new(0)
+		zero_operator_report_data[UN_SUBSCRIPTIONS_DAY_1]=Number.new(0)
+		zero_operator_report_data[UN_SUBSCRIPTIONS_DAY_3]=Number.new(0)
+		zero_operator_report_data[UN_SUBSCRIPTIONS_DAY_7]=Number.new(0)
+		zero_operator_report_data[UN_SUBSCRIPTIONS_DAY_15]=Number.new(0)
+		zero_operator_report_data[SUBSCRIPTIONS_DAY_0]=Number.new(0)
+		zero_operator_report_data[SUBSCRIPTIONS_DAY_1]=Number.new(0)
+		zero_operator_report_data[SUBSCRIPTIONS_DAY_3]=Number.new(0)
+		zero_operator_report_data[SUBSCRIPTIONS_DAY_7]=Number.new(0)
+		zero_operator_report_data[SUBSCRIPTIONS_DAY_15]=Number.new(0)
+
+		zero_operator_report_data[NET_REVENUE_DOLLAR]=Dollar.new(0.00)
+		zero_operator_report_data[REVENUE_DOLLAR]=Dollar.new(0.00)
+		zero_operator_report_data[AVERAGE_REVENUE_PER_SUBSCRIBER_DOLLAR]=Dollar.new(0.00)
+		zero_operator_report_data[PAUSE_ROI_DOLLAR]=Dollar.new(0.00)
+		zero_operator_report_data[DAILY_ROI_DOLLAR]=Dollar.new(0.00)
+
+		zero_operator_report_data[NET_REVENUE_LOCAL]=Amount.new(currency,0.00)
+		zero_operator_report_data[REVENUE_LOCAL]=Amount.new(currency,0.00)
+		zero_operator_report_data[AVERAGE_REVENUE_PER_SUBSCRIBER_LOCAL]=Amount.new(currency,0.00)
+		zero_operator_report_data[PAUSE_ROI_LOCAL]=Amount.new(currency,0.00)
+		zero_operator_report_data[DAILY_ROI_LOCAL]=Amount.new(currency,0.00)
+
+		zero_operator_report_data[NEW_SUB_UNSUB_PERCENT]=Percentage.new(0.00)
+		zero_operator_report_data[UNSUB_PERCENT]=Percentage.new(0.00)
+		zero_operator_report_data[MT_SUCCESS_PERCENT]=Percentage.new(0.00)
+		zero_operator_report_data[MT_SENT_PERCENT]=Percentage.new(0.00)
+		zero_operator_report_data[CONTENT_VIEW_PERCENT]=Percentage.new(0.00)
+
+	end
+
+	def get_zero_msisdn_data(currency,zero_msisdn_report_data)
+
+    zero_msisdn_report_data[IMPRESSIONS]=Number.new(0)
+    zero_msisdn_report_data[BANNER_CLICKS]=Number.new(0)
+    zero_msisdn_report_data[LANDING_PAGE_VIEWS]=Number.new(0)
+    zero_msisdn_report_data[ENGAGMENTS]=Number.new(0)
+    zero_msisdn_report_data[CONTENT_VIEWS]=Number.new(0)
+    zero_msisdn_report_data[SUBSCRIPTIONS]=Number.new(0)
+    zero_msisdn_report_data[UN_SUBSCRIPTIONS]=Number.new(0)
+
+    zero_msisdn_report_data[MT_SENT]=Number.new(0)
+    zero_msisdn_report_data[MT_SENT_BY_OPERATOR]=Number.new(0)
+    zero_msisdn_report_data[MT_SUCCESS]=Number.new(0)
+    zero_msisdn_report_data[MT_FAIL]=Number.new(0)
+    zero_msisdn_report_data[MT_RETRY]=Number.new(0)
+    zero_msisdn_report_data[MT_UNKNOWN]=Number.new(0)
+    zero_msisdn_report_data[MT_DELIVERED]=Number.new(0)
+
+    zero_msisdn_report_data[NET_REVENUE_DOLLAR]=Dollar.new(0.00)
+    zero_msisdn_report_data[REVENUE_DOLLAR]=Dollar.new(0.00)
+
+    zero_msisdn_report_data[NET_REVENUE_LOCAL]=Amount.new(currency,0.00)
+    zero_msisdn_report_data[REVENUE_LOCAL]=Amount.new(currency,0.00)
+
+    zero_msisdn_report_data[MEDIA_COST_LOCAL]=Amount.new(currency,0.00)
+    zero_msisdn_report_data[MEDIA_COST_DOLLAR]=Dollar.new(0.00)
+
+    zero_msisdn_report_data[COST_PER_ACTIVE_SUBSCRIBER_LOCAL]=Amount.new(currency,0.00)
+    zero_msisdn_report_data[COST_PER_ACTIVE_SUBSCRIBER_DOLLAR]=Dollar.new(0.00)
+
+    zero_msisdn_report_data[MT_SUCCESS_PERCENT]=Percentage.new(0.00)
+    zero_msisdn_report_data[MT_SENT_PERCENT]=Percentage.new(0.00)
+    zero_msisdn_report_data[CONTENT_VIEW_PERCENT]=Percentage.new(0.00)
+
+
+	end
+
+
+	#aggreagtions
+  def get_media_agg_group
+		media_agg_group =  {
+				GROUP_AGG_OP =>
+						{
+								ID_ => {
+								},
+								IMPRESSIONS => { SUM_AGG_OP => DOLLAR_AGG_OP+IMPRESSIONS_SHORT } ,
+								DUPLICATE_IMPRESSIONS => { SUM_AGG_OP => DOLLAR_AGG_OP+DUPLICATE_IMPRESSIONS_SHORT},
+								UNIQUE_IMPRESSIONS => { SUM_AGG_OP => DOLLAR_AGG_OP+UNIQUE_IMPRESSIONS_SHORT },
+								INVALID_IMPRESSIONS => { SUM_AGG_OP => DOLLAR_AGG_OP+INVALID_IMPRESSIONS_SHORT },
+								VALID_IMPRESSIONS => { SUM_AGG_OP => DOLLAR_AGG_OP+VALID_IMPRESSIONS_SHORT},
+								BANNER_CLICKS=>{SUM_AGG_OP=> DOLLAR_AGG_OP+BANNER_CLICKS_SHORT},
+								DUPLICATE_BANNER_CLICKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+DUPLICATE_BANNER_CLICKS_SHORT},
+								UNIQUE_BANNER_CLICKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UNIQUE_BANNER_CLICKS_SHORT},
+								INVALID_BANNER_CLICKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+INVALID_BANNER_CLICKS_SHORT},
+								VALID_BANNER_CLICKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+VALID_BANNER_CLICKS_SHORT},
+								LANDING_PAGE_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+LANDING_PAGE_VIEWS_SHORT},
+								DUPLICATE_LANDING_PAGE_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+DUPLICATE_LANDING_PAGE_VIEWS_SHORT},
+								UNIQUE_LANDING_PAGE_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UNIQUE_LANDING_PAGE_VIEWS_SHORT},
+								INVALID_LANDING_PAGE_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+INVALID_LANDING_PAGE_VIEWS_SHORT},
+								VALID_LANDING_PAGE_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+VALID_LANDING_PAGE_VIEWS_SHORT},
+								ENGAGMENTS=>{SUM_AGG_OP=> DOLLAR_AGG_OP+ENGAGMENTS_SHORT},
+								DUPLICATE_ENGAGMENTS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+DUPLICATE_ENGAGMENTS_SHORT},
+								UNIQUE_ENGAGMENTS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UNIQUE_ENGAGMENTS_SHORT},
+								INVALID_ENGAGMENTS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+INVALID_ENGAGMENTS_SHORT},
+								VALID_ENGAGMENTS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+VALID_ENGAGMENTS_SHORT},
+								SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_SHORT},
+								INVALID_SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+INVALID_SUBSCRIPTIONS_SHORT},
+								VALID_SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+VALID_SUBSCRIPTIONS_SHORT},
+								CONTENT_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+CONTENT_VIEWS_SHORT},
+								MEDIA_POSTBACKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+MEDIA_POSTBACKS_SHORT},
+								SUBSCRIPTION_POSTBACKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTION_POSTBACKS_SHORT}
+						}
+		}
+
+    return media_agg_group
+
+	end
+
+
+
+
+
+	def get_campaign_agg_group
+		campaign_agg_group =  {
+				GROUP_AGG_OP =>
+						{
+								ID_  => {},
+								IMPRESSIONS => { SUM_AGG_OP => DOLLAR_AGG_OP+IMPRESSIONS_SHORT + VALUE_DOT } ,
+								DUPLICATE_IMPRESSIONS => { SUM_AGG_OP => DOLLAR_AGG_OP+DUPLICATE_IMPRESSIONS_SHORT+ VALUE_DOT},
+								UNIQUE_IMPRESSIONS => { SUM_AGG_OP => DOLLAR_AGG_OP+UNIQUE_IMPRESSIONS_SHORT + VALUE_DOT},
+								INVALID_IMPRESSIONS => { SUM_AGG_OP => DOLLAR_AGG_OP+INVALID_IMPRESSIONS_SHORT + VALUE_DOT},
+								VALID_IMPRESSIONS => { SUM_AGG_OP => DOLLAR_AGG_OP+VALID_IMPRESSIONS_SHORT+ VALUE_DOT},
+								BANNER_CLICKS=>{SUM_AGG_OP=> DOLLAR_AGG_OP+BANNER_CLICKS_SHORT+ VALUE_DOT},
+								DUPLICATE_BANNER_CLICKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+DUPLICATE_BANNER_CLICKS_SHORT+ VALUE_DOT},
+								UNIQUE_BANNER_CLICKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UNIQUE_BANNER_CLICKS_SHORT+ VALUE_DOT},
+								INVALID_BANNER_CLICKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+INVALID_BANNER_CLICKS_SHORT+ VALUE_DOT},
+								VALID_BANNER_CLICKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+VALID_BANNER_CLICKS_SHORT+ VALUE_DOT},
+								LANDING_PAGE_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+LANDING_PAGE_VIEWS_SHORT+ VALUE_DOT},
+								DUPLICATE_LANDING_PAGE_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+DUPLICATE_LANDING_PAGE_VIEWS_SHORT+ VALUE_DOT},
+								UNIQUE_LANDING_PAGE_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UNIQUE_LANDING_PAGE_VIEWS_SHORT+ VALUE_DOT},
+								INVALID_LANDING_PAGE_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+INVALID_LANDING_PAGE_VIEWS_SHORT+ VALUE_DOT},
+								VALID_LANDING_PAGE_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+VALID_LANDING_PAGE_VIEWS_SHORT+ VALUE_DOT},
+								ENGAGMENTS=>{SUM_AGG_OP=> DOLLAR_AGG_OP+ENGAGMENTS_SHORT+ VALUE_DOT},
+								DUPLICATE_ENGAGMENTS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+DUPLICATE_ENGAGMENTS_SHORT+ VALUE_DOT},
+								UNIQUE_ENGAGMENTS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UNIQUE_ENGAGMENTS_SHORT+ VALUE_DOT},
+								INVALID_ENGAGMENTS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+INVALID_ENGAGMENTS_SHORT+ VALUE_DOT},
+								VALID_ENGAGMENTS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+VALID_ENGAGMENTS_SHORT+ VALUE_DOT},
+								SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_SHORT+ VALUE_DOT},
+								INVALID_SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+INVALID_SUBSCRIPTIONS_SHORT+ VALUE_DOT},
+								VALID_SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+VALID_SUBSCRIPTIONS_SHORT+ VALUE_DOT},
+								CONTENT_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+CONTENT_VIEWS_SHORT+ VALUE_DOT},
+								MEDIA_POSTBACKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+MEDIA_POSTBACKS_SHORT+ VALUE_DOT},
+								SUBSCRIPTION_POSTBACKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTION_POSTBACKS_SHORT+ VALUE_DOT},
+
+								MT_SENT=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SENT_SHORT+ VALUE_DOT},
+								MT_RETRY=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_RETRY_SHORT+ VALUE_DOT},
+								MT_FAIL=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_FAIL_SHORT+ VALUE_DOT},
+								MT_SUCCESS=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SUCCESS_SHORT+ VALUE_DOT},
+								MT_DELIVERED=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_DELIVERED_SHORT + VALUE_DOT},
+								MT_UNKNOWN=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_UNKNOWN_SHORT+ VALUE_DOT},
+								MT_SENT_BY_OPERATOR=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SENT_BY_OPERATOR_SHORT+ VALUE_DOT},
+								SUBSCRIBERS=>{ SUM_AGG_OP => DOLLAR_AGG_OP+SUBSCRIBERS_SHORT+ VALUE_DOT},
+								ACTIVE_SUBSCRIBERS=>{ SUM_AGG_OP => DOLLAR_AGG_OP+ACTIVE_SUBSCRIBERS_SHORT+ VALUE_DOT},
+								UN_SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_SHORT+ VALUE_DOT},
+								UN_SUBSCRIPTIONS_DAY_0=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_0_SHORT+ VALUE_DOT},
+								UN_SUBSCRIPTIONS_DAY_1=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_1_SHORT+ VALUE_DOT},
+								UN_SUBSCRIPTIONS_DAY_3=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_3_SHORT+ VALUE_DOT},
+								UN_SUBSCRIPTIONS_DAY_7=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_7_SHORT+ VALUE_DOT},
+								UN_SUBSCRIPTIONS_DAY_15=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_15_SHORT+ VALUE_DOT},
+								SUBSCRIPTIONS_DAY_0=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_0_SHORT+ VALUE_DOT},
+								SUBSCRIPTIONS_DAY_1=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_1_SHORT+ VALUE_DOT},
+								SUBSCRIPTIONS_DAY_3=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_3_SHORT+ VALUE_DOT},
+								SUBSCRIPTIONS_DAY_7=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_7_SHORT+ VALUE_DOT},
+								SUBSCRIPTIONS_DAY_15=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_15+ VALUE_DOT},
+								REVENUE_DOLLAR => {SUM_AGG_OP=>DOLLAR_AGG_OP+REVENUE_DOLLAR_SHORT+ VALUE_DOT},
+								REVENUE_LOCAL => {SUM_AGG_OP=>DOLLAR_AGG_OP+REVENUE_LOCAL_SHORT+ VALUE_DOT},
+								MEDIA_COST_DOLLAR => {SUM_AGG_OP=>DOLLAR_AGG_OP+MEDIA_COST_DOLLAR_SHORT+ VALUE_DOT},
+								MEDIA_COST_LOCAL => {SUM_AGG_OP=>DOLLAR_AGG_OP+MEDIA_COST_LOCAL_SHORT+ VALUE_DOT},
+								NET_REVENUE_DOLLAR => {SUM_AGG_OP=>DOLLAR_AGG_OP+NET_REVENUE_DOLLAR_SHORT+ VALUE_DOT},
+								NET_REVENUE_LOCAL => {SUM_AGG_OP=>DOLLAR_AGG_OP+NET_REVENUE_LOCAL_SHORT+ VALUE_DOT}
+						}
+		}
+
+		return campaign_agg_group
+	end
+
+  def get_campaign_daily_agg_group
+    campaign_agg_group =  {
+        GROUP_AGG_OP =>
+            {
+                ID_  => {},
+                IMPRESSIONS => { SUM_AGG_OP => DOLLAR_AGG_OP+IMPRESSIONS_SHORT + VALUE_DOT } ,
+                DUPLICATE_IMPRESSIONS => { SUM_AGG_OP => DOLLAR_AGG_OP+DUPLICATE_IMPRESSIONS_SHORT+ VALUE_DOT},
+                UNIQUE_IMPRESSIONS => { SUM_AGG_OP => DOLLAR_AGG_OP+UNIQUE_IMPRESSIONS_SHORT + VALUE_DOT},
+                INVALID_IMPRESSIONS => { SUM_AGG_OP => DOLLAR_AGG_OP+INVALID_IMPRESSIONS_SHORT + VALUE_DOT},
+                VALID_IMPRESSIONS => { SUM_AGG_OP => DOLLAR_AGG_OP+VALID_IMPRESSIONS_SHORT+ VALUE_DOT},
+                BANNER_CLICKS=>{SUM_AGG_OP=> DOLLAR_AGG_OP+BANNER_CLICKS_SHORT+ VALUE_DOT},
+                DUPLICATE_BANNER_CLICKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+DUPLICATE_BANNER_CLICKS_SHORT+ VALUE_DOT},
+                UNIQUE_BANNER_CLICKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UNIQUE_BANNER_CLICKS_SHORT+ VALUE_DOT},
+                INVALID_BANNER_CLICKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+INVALID_BANNER_CLICKS_SHORT+ VALUE_DOT},
+                VALID_BANNER_CLICKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+VALID_BANNER_CLICKS_SHORT+ VALUE_DOT},
+                LANDING_PAGE_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+LANDING_PAGE_VIEWS_SHORT+ VALUE_DOT},
+                DUPLICATE_LANDING_PAGE_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+DUPLICATE_LANDING_PAGE_VIEWS_SHORT+ VALUE_DOT},
+                UNIQUE_LANDING_PAGE_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UNIQUE_LANDING_PAGE_VIEWS_SHORT+ VALUE_DOT},
+                INVALID_LANDING_PAGE_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+INVALID_LANDING_PAGE_VIEWS_SHORT+ VALUE_DOT},
+                VALID_LANDING_PAGE_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+VALID_LANDING_PAGE_VIEWS_SHORT+ VALUE_DOT},
+                ENGAGMENTS=>{SUM_AGG_OP=> DOLLAR_AGG_OP+ENGAGMENTS_SHORT+ VALUE_DOT},
+                DUPLICATE_ENGAGMENTS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+DUPLICATE_ENGAGMENTS_SHORT+ VALUE_DOT},
+                UNIQUE_ENGAGMENTS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UNIQUE_ENGAGMENTS_SHORT+ VALUE_DOT},
+                INVALID_ENGAGMENTS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+INVALID_ENGAGMENTS_SHORT+ VALUE_DOT},
+                VALID_ENGAGMENTS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+VALID_ENGAGMENTS_SHORT+ VALUE_DOT},
+                SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_SHORT+ VALUE_DOT},
+                INVALID_SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+INVALID_SUBSCRIPTIONS_SHORT+ VALUE_DOT},
+                VALID_SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+VALID_SUBSCRIPTIONS_SHORT+ VALUE_DOT},
+                CONTENT_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+CONTENT_VIEWS_SHORT+ VALUE_DOT},
+                MEDIA_POSTBACKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+MEDIA_POSTBACKS_SHORT+ VALUE_DOT},
+                SUBSCRIPTION_POSTBACKS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTION_POSTBACKS_SHORT+ VALUE_DOT},
+
+                MT_SENT=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SENT_SHORT+ VALUE_DOT},
+                MT_RETRY=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_RETRY_SHORT+ VALUE_DOT},
+                MT_FAIL=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_FAIL_SHORT+ VALUE_DOT},
+                MT_SUCCESS=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SUCCESS_SHORT+ VALUE_DOT},
+                MT_DELIVERED=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_DELIVERED_SHORT + VALUE_DOT},
+                MT_UNKNOWN=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_UNKNOWN_SHORT+ VALUE_DOT},
+                MT_SENT_BY_OPERATOR=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SENT_BY_OPERATOR_SHORT+ VALUE_DOT},
+                SUBSCRIBERS=>{ SUM_AGG_OP => DOLLAR_AGG_OP+SUBSCRIBERS_SHORT+ VALUE_DOT},
+                ACTIVE_SUBSCRIBERS=>{ SUM_AGG_OP => DOLLAR_AGG_OP+ACTIVE_SUBSCRIBERS_SHORT+ VALUE_DOT},
+                UN_SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_SHORT+ VALUE_DOT},
+                UN_SUBSCRIPTIONS_DAY_0=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_0_SHORT+ VALUE_DOT},
+                UN_SUBSCRIPTIONS_DAY_1=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_1_SHORT+ VALUE_DOT},
+                UN_SUBSCRIPTIONS_DAY_3=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_3_SHORT+ VALUE_DOT},
+                UN_SUBSCRIPTIONS_DAY_7=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_7_SHORT+ VALUE_DOT},
+                UN_SUBSCRIPTIONS_DAY_15=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_15_SHORT+ VALUE_DOT},
+                SUBSCRIPTIONS_DAY_0=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_0_SHORT+ VALUE_DOT},
+                SUBSCRIPTIONS_DAY_1=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_1_SHORT+ VALUE_DOT},
+                SUBSCRIPTIONS_DAY_3=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_3_SHORT+ VALUE_DOT},
+                SUBSCRIPTIONS_DAY_7=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_7_SHORT+ VALUE_DOT},
+                SUBSCRIPTIONS_DAY_15=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_15+ VALUE_DOT}
+            }
+    }
+
+    return campaign_agg_group
+  end
+
+
+  def get_media_operator_agg_group
+		media_operator_agg_group =  {
+				GROUP_AGG_OP =>
+						{
+								ID_ => {
+								} ,
+
+								MT_SENT=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SENT_SHORT},
+								MT_RETRY=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_RETRY_SHORT},
+								MT_FAIL=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_FAIL_SHORT},
+								MT_SUCCESS=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SUCCESS_SHORT},
+								MT_DELIVERED=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_DELIVERED_SHORT },
+								MT_UNKNOWN=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_UNKNOWN_SHORT},
+								MT_SENT_BY_OPERATOR=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SENT_BY_OPERATOR_SHORT},
+								ACTIVE_SUBSCRIBERS=>{ SUM_AGG_OP => DOLLAR_AGG_OP+ACTIVE_SUBSCRIBERS_SHORT},
+								UN_SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_SHORT},
+								UN_SUBSCRIPTIONS_DAY_0=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_0_SHORT},
+								UN_SUBSCRIPTIONS_DAY_1=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_1_SHORT},
+								UN_SUBSCRIPTIONS_DAY_3=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_3_SHORT},
+								UN_SUBSCRIPTIONS_DAY_7=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_7_SHORT},
+								UN_SUBSCRIPTIONS_DAY_15=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_15_SHORT},
+								SUBSCRIPTIONS_DAY_0=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_0_SHORT},
+								SUBSCRIPTIONS_DAY_1=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_1_SHORT},
+								SUBSCRIPTIONS_DAY_3=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_3_SHORT},
+								SUBSCRIPTIONS_DAY_7=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_7_SHORT},
+								SUBSCRIPTIONS_DAY_15=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_15_SHORT}
+						}
+		}
+		return media_operator_agg_group
+	end
+
+	def get_campaign_media_operator_agg_group
+		media_operator_agg_group =  {
+				GROUP_AGG_OP =>
+						{
+								ID_ => {
+								} ,
+
+								MT_SENT=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SENT_SHORT},
+								MT_RETRY=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_RETRY_SHORT},
+								MT_FAIL=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_FAIL_SHORT},
+								MT_SUCCESS=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SUCCESS_SHORT},
+								MT_DELIVERED=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_DELIVERED_SHORT },
+								MT_UNKNOWN=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_UNKNOWN_SHORT},
+								MT_SENT_BY_OPERATOR=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SENT_BY_OPERATOR_SHORT},
+								ACTIVE_SUBSCRIBERS=>{ SUM_AGG_OP => DOLLAR_AGG_OP+ACTIVE_SUBSCRIBERS_SHORT},
+								UN_SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_SHORT},
+								UN_SUBSCRIPTIONS_DAY_0=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_0_SHORT},
+								UN_SUBSCRIPTIONS_DAY_1=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_1_SHORT},
+								UN_SUBSCRIPTIONS_DAY_3=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_3_SHORT},
+								UN_SUBSCRIPTIONS_DAY_7=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_7_SHORT},
+								UN_SUBSCRIPTIONS_DAY_15=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_15_SHORT},
+								SUBSCRIPTIONS_DAY_0=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_0_SHORT},
+								SUBSCRIPTIONS_DAY_1=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_1_SHORT},
+								SUBSCRIPTIONS_DAY_3=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_3_SHORT},
+								SUBSCRIPTIONS_DAY_7=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_7_SHORT},
+								SUBSCRIPTIONS_DAY_15=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_15_SHORT}
+						}
+		}
+		return media_operator_agg_group
+	end
+
+
+	def get_operator_agg_group
+		operator_agg_group =  {
+				GROUP_AGG_OP =>
+						{
+								ID_ => {
+								} ,
+
+								MT_SENT=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SENT_SHORT},
+								MT_RETRY=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_RETRY_SHORT},
+								MT_FAIL=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_FAIL_SHORT},
+								MT_SUCCESS=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SUCCESS_SHORT},
+								MT_DELIVERED=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_DELIVERED_SHORT },
+								MT_UNKNOWN=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_UNKNOWN_SHORT},
+								MT_SENT_BY_OPERATOR=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SENT_BY_OPERATOR_SHORT},
+								SUBSCRIBERS=>{ SUM_AGG_OP => DOLLAR_AGG_OP+SUBSCRIBERS_SHORT},
+								ACTIVE_SUBSCRIBERS=>{ SUM_AGG_OP => DOLLAR_AGG_OP+ACTIVE_SUBSCRIBERS_SHORT},
+								UN_SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_SHORT},
+								SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_0_SHORT},
+								UN_SUBSCRIPTIONS_DAY_0=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_0_SHORT},
+								UN_SUBSCRIPTIONS_DAY_1=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_1_SHORT},
+								UN_SUBSCRIPTIONS_DAY_3=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_3_SHORT},
+								UN_SUBSCRIPTIONS_DAY_7=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_7_SHORT},
+								UN_SUBSCRIPTIONS_DAY_15=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_15_SHORT},
+								SUBSCRIPTIONS_DAY_0=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_0_SHORT},
+								SUBSCRIPTIONS_DAY_1=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_1_SHORT},
+								SUBSCRIPTIONS_DAY_3=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_3_SHORT},
+								SUBSCRIPTIONS_DAY_7=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_7_SHORT},
+								SUBSCRIPTIONS_DAY_15=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_15_SHORT},
+                NET_REVENUE_DOLLAR => {SUM_AGG_OP=>DOLLAR_AGG_OP+NET_REVENUE_DOLLAR_SHORT},
+                NET_REVENUE_LOCAL => {SUM_AGG_OP=>DOLLAR_AGG_OP+NET_REVENUE_LOCAL_SHORT},
+                REVENUE_DOLLAR => {SUM_AGG_OP=>DOLLAR_AGG_OP+REVENUE_DOLLAR_SHORT},
+                REVENUE_LOCAL => {SUM_AGG_OP=>DOLLAR_AGG_OP+REVENUE_LOCAL_SHORT}
+						}
+		}
+		return operator_agg_group
+	end
+
+  def get_operator_daily_agg_group
+    operator_agg_group =  {
+        GROUP_AGG_OP =>
+            {
+                ID_ => {
+                } ,
+
+                MT_SENT=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SENT_SHORT+ VALUE_DOT},
+                MT_RETRY=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_RETRY_SHORT+ VALUE_DOT},
+                MT_FAIL=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_FAIL_SHORT+ VALUE_DOT},
+                MT_SUCCESS=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SUCCESS_SHORT+ VALUE_DOT},
+                MT_DELIVERED=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_DELIVERED_SHORT + VALUE_DOT},
+                MT_UNKNOWN=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_UNKNOWN_SHORT+ VALUE_DOT},
+                MT_SENT_BY_OPERATOR=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SENT_BY_OPERATOR_SHORT+ VALUE_DOT},
+                SUBSCRIBERS=>{ SUM_AGG_OP => DOLLAR_AGG_OP+SUBSCRIBERS_SHORT+ VALUE_DOT},
+                ACTIVE_SUBSCRIBERS=>{ SUM_AGG_OP => DOLLAR_AGG_OP+ACTIVE_SUBSCRIBERS_SHORT+ VALUE_DOT},
+                UN_SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_SHORT+ VALUE_DOT},
+                SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_0_SHORT+ VALUE_DOT},
+                UN_SUBSCRIPTIONS_DAY_0=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_0_SHORT+ VALUE_DOT},
+                UN_SUBSCRIPTIONS_DAY_1=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_1_SHORT+ VALUE_DOT},
+                UN_SUBSCRIPTIONS_DAY_3=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_3_SHORT+ VALUE_DOT},
+                UN_SUBSCRIPTIONS_DAY_7=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_7_SHORT+ VALUE_DOT},
+                UN_SUBSCRIPTIONS_DAY_15=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_DAY_15_SHORT+ VALUE_DOT},
+                SUBSCRIPTIONS_DAY_0=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_0_SHORT+ VALUE_DOT},
+                SUBSCRIPTIONS_DAY_1=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_1_SHORT+ VALUE_DOT},
+                SUBSCRIPTIONS_DAY_3=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_3_SHORT+ VALUE_DOT},
+                SUBSCRIPTIONS_DAY_7=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_7_SHORT+ VALUE_DOT},
+                SUBSCRIPTIONS_DAY_15=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_DAY_15_SHORT+ VALUE_DOT}
+            }
+    }
+    return operator_agg_group
+  end
+
+  def get_msisdn_agg_group
+    msisdn_agg_group =  {
+        GROUP_AGG_OP =>
+            {
+                ID_ => {
+                } ,
+                IMPRESSIONS => { SUM_AGG_OP => DOLLAR_AGG_OP+IMPRESSIONS_SHORT } ,
+                BANNER_CLICKS=>{SUM_AGG_OP=> DOLLAR_AGG_OP+BANNER_CLICKS_SHORT},
+                LANDING_PAGE_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+LANDING_PAGE_VIEWS_SHORT},
+                ENGAGMENTS=>{SUM_AGG_OP=> DOLLAR_AGG_OP+ENGAGMENTS_SHORT},
+                CONTENT_VIEWS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+CONTENT_VIEWS_SHORT},
+                MT_SENT=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SENT_SHORT},
+                MT_RETRY=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_RETRY_SHORT},
+                MT_FAIL=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_FAIL_SHORT},
+                MT_SUCCESS=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SUCCESS_SHORT},
+                MT_DELIVERED=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_DELIVERED_SHORT },
+                MT_UNKNOWN=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_UNKNOWN_SHORT},
+                MT_SENT_BY_OPERATOR=> { SUM_AGG_OP => DOLLAR_AGG_OP+MT_SENT_BY_OPERATOR_SHORT},
+                UN_SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+UN_SUBSCRIPTIONS_SHORT},
+                SUBSCRIPTIONS=>{SUM_AGG_OP=>DOLLAR_AGG_OP+SUBSCRIPTIONS_SHORT},
+                NET_REVENUE_DOLLAR => {SUM_AGG_OP=>DOLLAR_AGG_OP+NET_REVENUE_DOLLAR_SHORT},
+                NET_REVENUE_LOCAL => {SUM_AGG_OP=>DOLLAR_AGG_OP+NET_REVENUE_LOCAL_SHORT},
+                REVENUE_DOLLAR => {SUM_AGG_OP=>DOLLAR_AGG_OP+REVENUE_DOLLAR_SHORT},
+                REVENUE_LOCAL => {SUM_AGG_OP=>DOLLAR_AGG_OP+REVENUE_LOCAL_SHORT},
+                MEDIA_COST_DOLLAR => {SUM_AGG_OP=>DOLLAR_AGG_OP+MEDIA_COST_DOLLAR_SHORT},
+                MEDIA_COST_LOCAL => {SUM_AGG_OP=>DOLLAR_AGG_OP+MEDIA_COST_LOCAL_SHORT},
+            }
+    }
+    return msisdn_agg_group
+  end
+
+end
+

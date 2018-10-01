@@ -1,0 +1,70 @@
+renew_token:
+ every: 5m
+ class: TokenRenewJob
+ queue: recurring
+ args:
+ description: This job used to renew token
+
+currency_exchange:
+  every: 6h
+  class: CurrencyExchangeJob
+  queue: recurring
+  args:
+  description: This job used to refresh currency exchange
+
+#report imports
+zero_report_upload:
+    cron: 0 0 * * *
+    class: Imports::ZeroDataJob
+    queue: recurring
+    args:
+    description: This job add zero data for graphs.
+
+cmp_report_upload:
+ cron: 0 * * * *
+ class: Imports::CmpJob
+ queue: recurring
+ args:
+ description: This job imports cmp imports through api.
+
+msisdn_report_upload:
+ cron:  0 1 * * *
+ class: Imports::MsisdnJob
+ queue: recurring
+ args:
+ description: This job imports cmp msisdn imports through api.
+
+#tracker_report_upload:
+#  cron: 10 * * * *
+#  class: Imports::TrackerJob
+#  queue: recurring
+#  args:
+#  description: This job imports tracker imports through api.
+
+assigner_daily_report:
+  cron: 20 * * * *
+  class: Assigner::CampaignJob
+  queue: recurring
+  args:
+  description: This job designates daily report updations.
+
+assigner_lifetime_report:
+    cron: 30 * * * *
+    class: Assigner::LifetimeJob
+    queue: recurring
+    args:
+    description: This job designates lifetime report updations.
+
+assigner_account_report:
+    cron: 40 * * * *
+    class: Assigner::AccountJob
+    queue: recurring
+    args:
+    description: This job designates account report updations.
+
+assigner_msisdn_report:
+    cron: 0 2 * * *
+    class: Assigner::MsisdnJob
+    queue: recurring
+    args:
+    description: This job designates account msisdn report updations.
